@@ -1,4 +1,5 @@
-# NeRF
+# RISE 2019
 
-NEXT RESEARCH FRONTIER
-To promote interdisciplinary research at University at Albany
+Welcome to Rise2019 Conference
+
+Transforming University Engagement In Pre- and Post-Disaster Environments: Lessons from Puerto Rico 
