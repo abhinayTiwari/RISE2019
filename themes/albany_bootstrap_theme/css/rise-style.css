@@ -1,0 +1,73 @@
+.navbar-default {
+    background: #000000;
+    border-bottom: 2px solid #414358;
+}
+
+.navbar-default:after {
+    background: none;
+}
+
+.rise-right {
+    position: absolute;
+    right: 0;
+    bottom: 34%;
+}
+
+.logo.navbar-btn.pull-left {
+    position: relative;
+    top: -10px;
+    margin-bottom: 1.1%;
+}
+
+.slide-text h1,
+.slide-text p {
+    text-shadow: 3px 1px 2px black;
+}
+
+.slide-text p {
+    color: #eeb211 !important;
+}
+
+.menu-burger {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .logo.navbar-btn.pull-left {
+        /* position: absolute;
+        left: 0; */
+    }
+    /* .logo.navbar-btn.pull-left img {
+        height: 25px;
+    } */
+    .logo.navbar-btn.rise-right {
+        /* bottom: -69px; */
+        position: relative;
+    }
+    /* .logo.navbar-btn.rise-right img {
+        height: 33px;
+    } */
+    .rise-cochairText {
+        display: none;
+    }
+}
+
+footer.footer {
+    background-image: none;
+}
+
+#block-addressandlogofortheUAlbanyfooter {
+    float: right;
+}
+
+.rise-cochairText {
+    color: white;
+    font-family: calibri;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 6px;
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+    width: 100%;
+}
