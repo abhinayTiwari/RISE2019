@@ -32,6 +32,20 @@
     display: none;
 }
 
+
+/* 
+.rise-cochairText {
+    display: none;
+} */
+
+.logo.navbar-btn.pull-left img {
+    height: 76px;
+}
+
+.logo.navbar-btn.rise-right img {
+    height: 45px;
+}
+
 @media (max-width: 767px) {
     .logo.navbar-btn.pull-left {
         /* position: absolute;
@@ -64,10 +78,10 @@ footer.footer {
     color: white;
     font-family: calibri;
     font-style: italic;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 6px;
     position: absolute;
-    bottom: 0;
+    bottom: -24%;
     left: 1%;
     width: 100%;
 }
