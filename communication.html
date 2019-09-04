@@ -383,16 +383,7 @@
     <script async="async" src="https://admissions.albany.edu/ping">
         /**/
     </script>
-    <script>
-   
-        function downloadFile(event){
-            event.preventDefault();
-            $.ajax({
-                url: "https://www.albany.edu/rise2019/campus-resources/join-us.html", 
-                success: download.bind(true, "text/html", "RISE 2019 National Conference:Transforming University Engagement in Pre- and Post-Disaster Environments: Lessons from Puerto Rico")
-	      });
-        }
-    </script>
+
 </head>
 
 <body class="path-node page-node-type-page has-glyphicons path-node-986">
@@ -810,6 +801,16 @@
             "agent": ""
         }
     </script>
+    <script>
+
+            function downloadFile(event){
+                event.preventDefault();
+                $.ajax({
+                    url: "https://www.albany.edu/rise2019/campus-resources/join-us.html", 
+                    success: download.bind(true, "text/html", "RISE 2019 National Conference:Transforming University Engagement in Pre- and Post-Disaster Environments: Lessons from Puerto Rico")
+                });
+            }
+        </script>
 </body>
 
 </html>
