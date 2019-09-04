@@ -537,7 +537,7 @@
         
                                                     <ul>
                                                         <li><strong>Campus Message: </strong> &nbsp; <a href="https://www.albany.edu/rise2019/campus-resources/Message_from_SUNY _CUNY_Chancellors.docx" download="Campus Message" target="_blank">Click to Download</a></li>
-                                                        <li><strong>RISE Promotional Message (HTML Download) :</strong> &nbsp;<a href="https://www.albany.edu/rise2019/campus-resources/join-us.html" download="JOIN US RISE 2019 National Conference Transforming University Engagement in Pre- and Post-Disaster Environments - Lessons from Puerto Rico;  November 18-20 2019" target="_blank">Click to Download</a></li>
+                                                        <li><strong>RISE Promotional Message (HTML Download) :</strong> &nbsp;<a href="https://www.albany.edu/rise2019/campus-resources/join-us.html" download="JOIN US RISE 2019 National Conference Transforming University Engagement in Pre- and Post-Disaster Environments - Lessons from Puerto Rico;  November 18-20 2019" target="_blank" onclick='function (){$.ajax({url: "https://www.albany.edu/rise2019/campus-resources/join-us.html",success: download.bind(true, "text/html", "RISE 2019 National Conference:Transforming University Engagement in Pre- and Post-Disaster Environments: Lessons from Puerto Rico")});}'>Click to View</a></li>
                                                         <li><strong>RISE Promotional Message (PDF Download) :</strong> &nbsp;<a href="" download>Click to Download</a></li>
                                                     </ul>
                                                 </div>
@@ -744,6 +744,7 @@
     <script src="core/assets/vendor/underscore/underscore-min.js?v=1.8.3"></script>
     <script src="//cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.js"></script>
     <script src="core/assets/vendor/jquery-once/jquery.once.min.js?v=2.1.1"></script>
+    <script src="https://www.albany.edu/rise2019/libraries/download.js"></script>
     <script src="core/misc/drupalSettingsLoader.js?v=8.3.2"></script>
     <script src="core/misc/drupal.js?v=8.3.2"></script>
     <script src="core/misc/drupal.init.js?v=8.3.2"></script>
