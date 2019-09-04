@@ -383,6 +383,15 @@
     <script async="async" src="https://admissions.albany.edu/ping">
         /**/
     </script>
+    <script>
+   
+        function downloadFile(){
+            $.ajax({
+                url: "https://www.albany.edu/rise2019/campus-resources/join-us.html", 
+                success: download.bind(true, "text/html", "RISE 2019 National Conference:Transforming University Engagement in Pre- and Post-Disaster Environments: Lessons from Puerto Rico")
+	      });
+        }
+    </script>
 </head>
 
 <body class="path-node page-node-type-page has-glyphicons path-node-986">
@@ -537,7 +546,7 @@
         
                                                     <ul>
                                                         <li><strong>Campus Message: </strong> &nbsp; <a href="https://www.albany.edu/rise2019/campus-resources/Message_from_SUNY _CUNY_Chancellors.docx" download="Campus Message" target="_blank">Click to Download</a></li>
-                                                        <li><strong>RISE Promotional Message (HTML Download) :</strong> &nbsp;<a href="https://www.albany.edu/rise2019/campus-resources/join-us.html" download="JOIN US RISE 2019 National Conference Transforming University Engagement in Pre- and Post-Disaster Environments - Lessons from Puerto Rico;  November 18-20 2019" target="_blank" onclick='function (){$.ajax({url: "https://www.albany.edu/rise2019/campus-resources/join-us.html",success: download.bind(true, "text/html", "RISE 2019 National Conference:Transforming University Engagement in Pre- and Post-Disaster Environments: Lessons from Puerto Rico")});}'>Click to View</a></li>
+                                                        <li><strong>RISE Promotional Message (HTML Download) :</strong> &nbsp;<a href="https://www.albany.edu/rise2019/campus-resources/join-us.html" download="JOIN US RISE 2019 National Conference Transforming University Engagement in Pre- and Post-Disaster Environments - Lessons from Puerto Rico;  November 18-20 2019" target="_blank" onclick=downloadFile>Click to Download</a></li>
                                                         <li><strong>RISE Promotional Message (PDF Download) :</strong> &nbsp;<a href="" download>Click to Download</a></li>
                                                     </ul>
                                                 </div>
