@@ -530,18 +530,18 @@
                             <div class="region region-content">
                                 <article role="article" about="/paragraphs-sidebar" class="page full clearfix">
                                     <div class="content">
-                                        
-                                            <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
-                                                    <h2>Communication Resources</h2>
-        
-                                                    <p>&nbsp;</p>
-        
-                                                    <ul>
-                                                        <li><strong>Campus Message: </strong> &nbsp; <a href="https://www.albany.edu/rise2019/campus-resources/Message_from_SUNY _CUNY_Chancellors.docx" download="Campus Message" target="_blank">Click to Download</a></li>
-                                                        <li><strong>RISE Promotional Message (HTML Download) :</strong> &nbsp;<a href="https://www.albany.edu/rise2019/campus-resources/join-us.html" download="JOIN US RISE 2019 National Conference Transforming University Engagement in Pre- and Post-Disaster Environments - Lessons from Puerto Rico;  November 18-20 2019" onclick=downloadFile(event)>Click here to View</a></li>
-                                                        <li><strong>RISE Promotional Message (PDF Download) :</strong> &nbsp;<a href="" download>Click to Download</a></li>
-                                                    </ul>
-                                                </div>
+
+                                        <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                                            <h2>Communication Resources</h2>
+
+                                            <p>&nbsp;</p>
+
+                                            <ul>
+                                                <li><strong>Campus Message: </strong> &nbsp; <a href="https://www.albany.edu/rise2019/campus-resources/Message_from_SUNY _CUNY_Chancellors.docx" download="Campus Message" target="_blank">Click to Download</a></li>
+                                                <li><strong>RISE Promotional Message (HTML Download) :</strong> &nbsp;<a href="https://www.albany.edu/rise2019/campus-resources/join-us.html">Click here to View</a></li>
+                                                <li><strong>RISE Promotional Message (PDF Format) :</strong> &nbsp;<a href="">Click to View (Pending)</a></li>
+                                            </ul>
+                                        </div>
 
                                     </div>
 
@@ -801,30 +801,28 @@
             "agent": ""
         }
     </script>
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
+        function downloadFile(event) {
+            event.preventDefault();
+            $.ajax({
+                url: "https://rise2019.org/campus-resources/join-us.html",
+                success: download.bind(true, "text/html", "RISE 2019 National Conference:Transforming University Engagement in Pre- and Post-Disaster Environments: Lessons from Puerto Rico")
+            });
+        }
 
-            function downloadFile(event){
-                event.preventDefault();
-                $.ajax({
-                    url: "https://rise2019.org/campus-resources/join-us.html", 
-                    success: download.bind(true, "text/html", "RISE 2019 National Conference:Transforming University Engagement in Pre- and Post-Disaster Environments: Lessons from Puerto Rico")
-                });
-            }
-
-            // function loadDoc() {
-            //     var xhttp = new XMLHttpRequest();
-            //     xhttp.onreadystatechange = function() {
-            //         if (this.readyState == 4 && this.status == 200) {
-            //     debugger
-            //         download.bind(this.responseText, "text/html", "RISE 2019 National Conference:Transforming University Engagement in Pre- and Post-Disaster Environments: Lessons from Puerto Rico")
-            //         }
-            //     };
-            //     xhttp.open("GET", "https://rise2019.org/campus-resources/join-us.html", true);
-            //     xhttp.send();
-            //     }
-        </script>
+        // function loadDoc() {
+        //     var xhttp = new XMLHttpRequest();
+        //     xhttp.onreadystatechange = function() {
+        //         if (this.readyState == 4 && this.status == 200) {
+        //     debugger
+        //         download.bind(this.responseText, "text/html", "RISE 2019 National Conference:Transforming University Engagement in Pre- and Post-Disaster Environments: Lessons from Puerto Rico")
+        //         }
+        //     };
+        //     xhttp.open("GET", "https://rise2019.org/campus-resources/join-us.html", true);
+        //     xhttp.send();
+        //     }
+    </script>
 </body>
 
 </html>
