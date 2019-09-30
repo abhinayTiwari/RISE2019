@@ -75,13 +75,17 @@ footer.footer {
 }
 
 .rise-cochairText {
-    color: white;
+    color: #ffffff;
     font-family: calibri;
     font-style: italic;
-    font-size: 16px;
-    margin-top: 6px;
+    font-size: 17px;
     position: absolute;
-    bottom: -24%;
+    top: 11%;
+    z-index: 2;
     left: 1%;
-    width: 100%;
+}
+
+.partener-img-box{
+    border: 1px solid #a5a2a2;
+    box-shadow: 2px 2px 12px #a7a4a4;
 }
