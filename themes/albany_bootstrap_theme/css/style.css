@@ -63,9 +63,9 @@ a {
     background-color: transparent;
 }
 
-a:active,
 a:hover {
-    outline: 0;
+    text-decoration: none;
+    color: #46166B;
 }
 
 abbr[title] {
@@ -1413,7 +1413,7 @@ a {
     text-decoration: none;
 }
 
-a:hover,
+
 a:focus {
     color: #23527c;
     text-decoration: underline;
@@ -8905,6 +8905,7 @@ a:visited {
 
 a:hover {
     text-decoration: underline;
+    color: #46166B;
 }
 
 
@@ -14493,7 +14494,7 @@ article.person .field--name-field-related-university-organiz {
 			background-color: rgba(0, 0, 0, 0.5);
 		}
 		*/
-    background: #46166B;
+    background: #000;
     border: solid 3px white;
     padding: 50px 15px;
     text-align: center;
