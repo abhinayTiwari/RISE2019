@@ -1,0 +1,19 @@
+/**
+ * @file
+ * Contains css for quotes
+ */
+.quotes{
+color: #46166B;
+
+}
+
+.crop {
+    width: 270px;
+    height: 128px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 315px;
+    height: 228px;
+}
