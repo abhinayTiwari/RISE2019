@@ -330,7 +330,7 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
     <link rel="shortlink" href="/node/986" />
     <link rel="revision" href="/paragraphs-sidebar" />
     <script src="sites/default/files/google_tag/google_tag.script.js?pr6ry1"></script>
-    <title>Template | University at Albany</title>
+    <title>RISE2019 POSTER Winners | University at Albany</title>
     <style media="all">
         @import url("core/modules/system/css/components/align.module.css?pr6ry1");
         @import url("core/modules/system/css/components/fieldgroup.module.css?pr6ry1");
@@ -417,8 +417,8 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
                     <a class="logo navbar-btn rise-right" href="/" title="Home" rel="home">
                         <img src="/sites/default/files/logo.png" alt="Home" />
                     </a>
-                    <div class="rise-cochairText">RISE Co-Chairs Marla Pérez Lugo, Ph.D. &amp; Cecilio Ortiz Garcia, Ph.D.
-                    </div>
+                    <!-- <div class="rise-cochairText">RISE Co-Chairs Marla Pérez Lugo, Ph.D. &amp; Cecilio Ortiz Garcia, Ph.D.
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -447,7 +447,7 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
                                                             <div class="view-content">
                                                                 <div class="views-row">
                                                                     <div class="views-field views-field-title">
-                                                                        <h1 class="field-content">Template - RISE 2019 Conference</h1>
+                                                                        <h1 class="field-content">RISE Poster Winners - RISE 2019 Conference</h1>
                                                                     </div>
                                                                     <div class="views-field views-field-field-page-subtitle">
                                                                         <div class="field-content">
@@ -549,6 +549,7 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
                                         <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
                                             <!-- //content goes here -->
                                             <h2>Poster Winners</h2>
+                                            <h3>Top <span id="total-winners"></span></h3>
                                             <ul id="poster-winner-container"></ul>
                                         </div>
 
@@ -832,6 +833,7 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
         }
 
         function renderWinners(data) {
+            document.querySelector("#total-winners").innerText = data.length;
             const parentElement = document.querySelector("#poster-winner-container");
             data.forEach(element => {
                 let $curElem = createElement("li");
