@@ -47,3 +47,62 @@
 .signature-box {
     text-align: center;
 }
+
+.button-wrapper{
+    text-align: right;
+}
+
+.modal-title
+{
+    display: inline-block;
+}
+
+#exampleModal{
+    margin-top: 2%;
+}
+
+@media screen and (max-width: 575px)
+{
+    .modal-dialog{
+        width: 95%;
+        margin: auto;
+    }
+
+    .modal-body{
+        height: 450px;
+    }
+}
+
+@media screen and (min-width: 576px)
+{
+    .modal-dialog{
+        width: 95%;
+        margin: auto;
+    }
+
+    .modal-body{
+        height: 600px;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .modal-dialog{
+        width: 720px;
+    }
+
+    .modal-body{
+        height: 750px;
+    }
+}
+
+@media screen and (min-width: 992px)
+{
+    .modal-dialog{
+        width: 800px;
+    }
+
+    .modal-body{
+        height: 900px;
+    }
+}
