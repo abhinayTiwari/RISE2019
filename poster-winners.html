@@ -313,11 +313,8 @@
         ga("set", "anonymizeIp", true);
         ga("send", "pageview");
     </script> -->
-    <meta name="title" content="Conference Resources | University at Albany" />
-    <meta name="description" content="Inner Page Headline
-
-This is a standard body content area for the page. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+    <meta name="title" content="RISE Poster Winners | University at Albany" />
+    <meta name="description" content="RISE Poster Winners
  
 
  " />
@@ -326,9 +323,9 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
     <meta name="HandheldFriendly" content="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
-    <link rel="canonical" href="/paragraphs-sidebar" />
-    <link rel="shortlink" href="/node/986" />
-    <link rel="revision" href="/paragraphs-sidebar" />
+    <link rel="canonical" href="https://rise2019.org/poster-winners.html" />
+    <link rel="shortlink" href="https://rise2019.org/poster-winners.html" />
+    <link rel="revision" href="https://www.albany.edu/rise2019/home.html" />
     <script src="sites/default/files/google_tag/google_tag.script.js?pr6ry1"></script>
     <title>RISE2019 POSTER Winners | University at Albany</title>
     <style media="all">
@@ -387,7 +384,7 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
     <script async="async" src="https://admissions.albany.edu/ping">
         /**/
     </script>
-    <script async="async" src="themes/albany_bootstrap_theme/js/poster-winner.js"></script>
+    <!-- <script async="async" src="themes/albany_bootstrap_theme/js/poster-winner.js"></script> -->
 </head>
 
 <body class="path-node page-node-type-page has-glyphicons path-node-986">
@@ -840,6 +837,40 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
                 $curElem.innerText = element
                 parentElement.appendChild($curElem);
             });
+        }
+
+
+
+        function risePosterWinners(data) {
+            if ("object" != typeof data) return "Please send the JSON Object data";
+            if (!data.Items || 0 == data.Items.length) return "No Data Available yet!!";
+            const o = data.Items.map(e => e.VotedPosters);
+
+            return getTopFive(countFrequency(flat(o)))
+
+        }
+
+
+        //returns the Object in descending order by it's values
+        const getTop = function getTop(n, obj) {
+            return (obj) => {
+                return Object.keys(obj).sort(function(a, b) {
+                    return obj[b] - obj[a]
+                }).slice(0, n + 1);
+            }
+        }
+
+
+        function flat(array) {
+            return array.reduce((res, cur) => [...res, ...cur], [])
+        }
+
+        function countFrequency(dataArray) {
+            const map = {};
+            dataArray.forEach(element => {
+                map[element] = map[element] ? ++map[element] : 1;
+            });
+            return map;
         }
     </script>
 </body>
