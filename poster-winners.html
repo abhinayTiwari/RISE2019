@@ -313,11 +313,8 @@
         ga("set", "anonymizeIp", true);
         ga("send", "pageview");
     </script> -->
-    <meta name="title" content="Conference Resources | University at Albany" />
-    <meta name="description" content="Inner Page Headline
-
-This is a standard body content area for the page. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+    <meta name="title" content="RISE Poster Winners | University at Albany" />
+    <meta name="description" content="RISE Poster Winners
  
 
  " />
@@ -326,9 +323,9 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
     <meta name="HandheldFriendly" content="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
-    <link rel="canonical" href="/paragraphs-sidebar" />
-    <link rel="shortlink" href="/node/986" />
-    <link rel="revision" href="/paragraphs-sidebar" />
+    <link rel="canonical" href="https://rise2019.org/poster-winners.html" />
+    <link rel="shortlink" href="https://rise2019.org/poster-winners.html" />
+    <link rel="revision" href="https://www.albany.edu/rise2019/home.html" />
     <script src="sites/default/files/google_tag/google_tag.script.js?pr6ry1"></script>
     <title>RISE2019 POSTER Winners | University at Albany</title>
     <style media="all">
@@ -366,6 +363,7 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
         @import url("themes/albany_bootstrap_theme/styleguide/assets/css/style.css?pr6ry1");
     </style>
     <link rel="stylesheet" href="themes/albany_bootstrap_theme/css/rise-style.css" />
+    <link rel="stylesheet" href="https://www.albany.edu/rise2019/themes/albany_bootstrap_theme/css/poster-voting.css?pr6ry27" />
     <style media="all">
         @import url("sites/default/files/asset_injector/css/all_pages_background-bd2de4081d49a2e6dcfab599b80af0e0.css?pr6ry1");
         @import url("sites/default/files/asset_injector/css/bullets_top_align-05c791021ddbed47afbd8e3e871c3cb3.css?pr6ry1");
@@ -387,7 +385,7 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
     <script async="async" src="https://admissions.albany.edu/ping">
         /**/
     </script>
-    <script async="async" src="themes/albany_bootstrap_theme/js/poster-winner.js"></script>
+    <!-- <script async="async" src="themes/albany_bootstrap_theme/js/poster-winner.js"></script> -->
 </head>
 
 <body class="path-node page-node-type-page has-glyphicons path-node-986">
@@ -550,7 +548,7 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
                                             <!-- //content goes here -->
                                             <h2>Poster Winners</h2>
                                             <h3>Top <span id="total-winners"></span></h3>
-                                            <ul id="poster-winner-container"></ul>
+                                            <div id="poster-winner-container"></div>
                                         </div>
 
                                     </div>
@@ -777,6 +775,7 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
     <script src="themes/albany_bootstrap_theme/js/jquery.matchHeight-min.js?pr6ry1"></script>
     <script src="themes/albany_bootstrap_theme/js/match_heights.js?pr6ry1"></script>
     <script src="themes/albany_bootstrap_theme/js/megamenu.js?pr6ry1"></script>
+    <script src="https://www.albany.edu/rise2019/themes/albany_bootstrap_theme/js/rise-ajax-min.js?pr6ry3"></script>
     <script src="themes/albany_bootstrap_theme/js/megamenu_init.js?pr6ry1"></script>
     <script src="themes/albany_bootstrap_theme/js/hero_slideshow.js?pr6ry1"></script>
     <script src="themes/albany_bootstrap_theme/js/iscroll-new.js?pr6ry1"></script>
@@ -812,16 +811,21 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
     </script>
 
     <script type="text/javascript">
-        window.onload = loadDoc;
+        window.onload = loadVotesData;
+
+        function loadAllPosters() {
+            Rise.getData("https://2oo6657gwl.execute-api.us-east-2.amazonaws.com/Dev/getposters", Rise.errorHandler, renderWinners);
+        }
 
 
-        function loadDoc() {
+        function loadVotesData() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     const result = risePosterWinners(JSON.parse(this.responseText));
                     console.log(result);
-                    renderWinners(result);
+                    Rise.winnersID = result;
+                    loadAllPosters()
                 }
             };
             xhttp.open("GET", "https://f9lu7s5et2.execute-api.us-east-2.amazonaws.com/Dev/getallcustomerdetails", true);
@@ -833,13 +837,73 @@ This is a standard body content area for the page. Lorem ipsum dolor sit amet, 
         }
 
         function renderWinners(data) {
-            document.querySelector("#total-winners").innerText = data.length;
-            const parentElement = document.querySelector("#poster-winner-container");
-            data.forEach(element => {
-                let $curElem = createElement("li");
-                $curElem.innerText = element
-                parentElement.appendChild($curElem);
+            const filterDataByID = data.Items.filter((poster) => Rise.winnersID.includes(poster.PosterID))
+            document.querySelector("#total-winners").innerText = filterDataByID.length;
+            const $parentElement = document.querySelector("#poster-winner-container");
+
+            filterDataByID.forEach(posterData => {
+                let $poster = getPosterTemplate(posterData);
+                $parentElement.appendChild($poster);
             });
+        }
+
+
+        const getPosterTemplate = function(posterData) {
+
+            const $poster = createElement("div");
+            $poster.id = posterData.PosterID;
+            $poster.classList.add("poster-container", "col-lg-3", "col-md-5", "col-sm-5", "col-xs-12");
+
+            const $posterImg = createElement("img");
+            $posterImg.src = posterData.PosterIconLink;
+            $posterImg.classList.add("poster-icon");
+
+            const $posterLink = createElement("a");
+            $posterLink.href = posterData.PosterLink;
+            $posterLink.target = "_blank";
+            $posterLink.innerText = "View Poster"
+            $posterLink.classList.add("poster-link");
+
+            $poster.appendChild($posterImg);
+            $poster.appendChild(document.createElement("br"));
+            $poster.appendChild($posterLink);
+            return $poster;
+        }
+
+
+        function risePosterWinners(data) {
+            if ("object" != typeof data) return "Please send the JSON Object data";
+            if (!data.Items || 0 == data.Items.length) return "No Data Available yet!!";
+            const o = data.Items.map(e => e.VotedPosters);
+            const top5IDs = getTopFive(countFrequency(flat(o)));
+            return top5IDs;
+
+        }
+
+
+        //returns the Object in descending order by it's values
+        function getTop(n, obj) {
+            return (obj) => {
+                return Object.keys(obj).sort(function(a, b) {
+                    return obj[b] - obj[a]
+                }).slice(0, n);
+            }
+        }
+
+        //returns the top five keys based on the values
+        const getTopFive = getTop(5);
+
+
+        function flat(array) {
+            return array.reduce((res, cur) => [...res, ...cur], [])
+        }
+
+        function countFrequency(dataArray) {
+            const map = {};
+            dataArray.forEach(element => {
+                map[element] = map[element] ? ++map[element] : 1;
+            });
+            return map;
         }
     </script>
 </body>
