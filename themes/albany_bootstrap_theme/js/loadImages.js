@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded",function(){
         speakerLink = speakerLink.substring(speakerLink.lastIndexOf('/')+1, speakerLink.length - 5);
         speakerImage = speakerImage.substring(speakerImage.lastIndexOf('/')+1, speakerImage.length -4);
         if(speakerLink != speakerImage){
-        let imageURL = 'https://raw.githubusercontent.com/UjashM/RISE2019/master/img/Speakers/' + speakerLink +'.png';
+        let imageURL = 'https://rise2019.org/img/Speakers/' + speakerLink +'.png';
           fetch(imageURL).then((response)=>{ 
             if(response.status == 200){
                 speakerImages[speakerCount].src = imageURL;
