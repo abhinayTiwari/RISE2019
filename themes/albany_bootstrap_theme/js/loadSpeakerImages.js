@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded",function(){
     let websiteLink = window.location.href;
     let speakerLink = websiteLink.substring(websiteLink.lastIndexOf('/')+1, websiteLink.length - 5);
     let imageURL = 'https://rise2019.org/img/Speakers/' + speakerLink +'.png';
+    let  imagediv = document.getElementsByClassName('embedded-entity');
+    if(imagediv.length == 0)
+    {
     fetch(imageURL).then((response)=>{ 
             if(response.status == 200){
                 let imageSrc = imageURL;
@@ -14,4 +17,5 @@ document.addEventListener("DOMContentLoaded",function(){
                 speakerImages[0].insertAdjacentHTML('afterbegin', image_template);
             }
         });
+    }
 });
