@@ -836,19 +836,34 @@
             return document.createElement(name);
         }
 
+        //Rise.winnersID =  ["rise-pcupr-juan-1061", "rise-pucdpr-bryan-1009", "rise-pcupr-naomi-1037", "rise-dum-carlie-1059", "rise-ualbany-diane-1012"]
+        //filterDataByID:
+        // 0: {University: "University of Minnesota", PosterLink: "https://rise2019.org/assets/studentPosters/POSTER_Carlie_Derouin-University_of_Minnesota.pdf", PosterID: "rise-dum-carlie-1059", SubmittedBy: "Carlie Derouin", PosterIconLink: "https://rise2019.org/img/posterIcons/rise-dum-carlie-5691.png"}
+        // 1: {University: "Empire State College", PosterLink: "https://rise2019.org/assets/studentPosters/POSTER_Diane Owens-Empire_State_College.pdf", PosterID: "rise-ualbany-diane-1012", SubmittedBy: "Diane Owens", PosterIconLink: "https://rise2019.org/img/posterIcons/rise-esc-diane-5683.png"}
+        // 2: {University: "SUNY, University at Buffalo", PosterLink: "https://rise2019.org/assets/studentPosters/POSTER_Naomi_Romero-SUNY_University_at_Buffalo.pdf", PosterID: "rise-pcupr-naomi-1037", SubmittedBy: "Naomi Romero", PosterIconLink: "https://rise2019.org/img/posterIcons/rise-ubuffalo-naomi-5655.png"}
+        // 3: {University: "Pontifical University Catholic of Puerto Rico", PosterLink: "https://rise2019.org/assets/studentPosters/POSTER_…Pontifical_Catholic_University_of_Puerto_Rico.pdf", PosterID: "rise-pcupr-juan-1061", SubmittedBy: "Juan Carlos Melendez Vazquez", PosterIconLink: "https://rise2019.org/img/posterIcons/rise-pcupr-juan-5693.png"}
+        // 4: {University: "Pontificia Universidad Catolica de Puerto Rico", PosterLink: "https://rise2019.org/assets/studentPosters/POSTER_…ontificia_Universidad_Catolica_de_Puerto_Rico.pdf", Pos
         function renderWinners(data) {
-            const filterDataByID = data.Items.filter((poster) => Rise.winnersID.includes(poster.PosterID))
+            const filterDataByID = data.Items.filter((poster) => Rise.winnersID.includes(poster.PosterID));
+            const sortByWinners = [];
+            Rise.winnersID.forEach(function(elem) {
+                filterDataByID.forEach(function(posterObj, i) {
+                    if (elem === posterObj.PosterID)
+                        sortByWinners.push(posterObj);
+                })
+            })
+
             document.querySelector("#total-winners").innerText = filterDataByID.length;
             const $parentElement = document.querySelector("#poster-winner-container");
 
-            filterDataByID.forEach(posterData => {
-                let $poster = getPosterTemplate(posterData);
+            filterDataByID.forEach((posterData, rank) => {
+                let $poster = getPosterTemplate(posterData, rank);
                 $parentElement.appendChild($poster);
             });
         }
 
 
-        const getPosterTemplate = function(posterData) {
+        const getPosterTemplate = function(posterData, rank) {
 
             const $poster = createElement("div");
             $poster.id = posterData.PosterID;
@@ -864,9 +879,14 @@
             $posterLink.innerText = "View Poster"
             $posterLink.classList.add("poster-link");
 
+            const $rankText = createElement("div");
+            $rankText.innerText = "Rank of this poster is: " + rank;
+
             $poster.appendChild($posterImg);
             $poster.appendChild(document.createElement("br"));
             $poster.appendChild($posterLink);
+            $poster.appendChild($rankText);
+
             return $poster;
         }
 
@@ -875,6 +895,7 @@
             if ("object" != typeof data) return "Please send the JSON Object data";
             if (!data.Items || 0 == data.Items.length) return "No Data Available yet!!";
             const o = data.Items.map(e => e.VotedPosters);
+            console.log(countFrequency(flat(o)));
             const top5IDs = getTopFive(countFrequency(flat(o)));
             return top5IDs;
 
