@@ -363,7 +363,7 @@
         @import url("themes/albany_bootstrap_theme/styleguide/assets/css/style.css?pr6ry1");
     </style>
     <link rel="stylesheet" href="themes/albany_bootstrap_theme/css/rise-style.css" />
-    <link rel="stylesheet" href="https://www.albany.edu/rise2019/themes/albany_bootstrap_theme/css/poster-voting.css?pr6ry27" />
+    <link rel="stylesheet" href="https://www.albany.edu/rise2019/themes/albany_bootstrap_theme/css/poster-voting.css?pr6ry98" />
     <style media="all">
         @import url("sites/default/files/asset_injector/css/all_pages_background-bd2de4081d49a2e6dcfab599b80af0e0.css?pr6ry1");
         @import url("sites/default/files/asset_injector/css/bullets_top_align-05c791021ddbed47afbd8e3e871c3cb3.css?pr6ry1");
@@ -853,11 +853,11 @@
                 })
             })
 
-            document.querySelector("#total-winners").innerText = filterDataByID.length;
+            document.querySelector("#total-winners").innerText = sortByWinners.length;
             const $parentElement = document.querySelector("#poster-winner-container");
 
-            filterDataByID.forEach((posterData, rank) => {
-                let $poster = getPosterTemplate(posterData, rank);
+            sortByWinners.forEach((posterData, rank) => {
+                let $poster = getPosterTemplate(posterData, (rank + 1));
                 $parentElement.appendChild($poster);
             });
         }
@@ -880,6 +880,7 @@
             $posterLink.classList.add("poster-link");
 
             const $rankText = createElement("div");
+            $rankText.classList.add("rank-container");
             $rankText.innerText = "Rank of this poster is: " + rank;
 
             $poster.appendChild($posterImg);
