@@ -1,6 +1,8 @@
 /**
  * @file
- * Contains css for quotes
+ * Contains css for 
+   1. Quotes About Rise
+   2. Share a Quote
  */
 
  .quotes p {
@@ -50,6 +52,11 @@
 
 .button-wrapper{
     text-align: right;
+}
+
+#quotesbutton{
+    border-radius: 4px;
+    padding: 8px;
 }
 
 .modal-title
