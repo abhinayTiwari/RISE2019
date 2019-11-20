@@ -896,7 +896,8 @@
             if ("object" != typeof data) return "Please send the JSON Object data";
             if (!data.Items || 0 == data.Items.length) return "No Data Available yet!!";
             const o = data.Items.map(e => e.VotedPosters);
-            console.log(countFrequency(flat(o)));
+            Rise.state = { data: countFrequency(flat(o))};
+            console.log(Rise.state.data);
             const top5IDs = getTopFive(countFrequency(flat(o)));
             return top5IDs;
 
@@ -926,6 +927,16 @@
                 map[element] = map[element] ? ++map[element] : 1;
             });
             return map;
+        }
+
+        function getNumberOfVotesForWinners(){
+            let numberOfVotes = [];
+            Rise.winnersID.forEach(function (e){ 
+                let obj = {};
+                obj[e] = Rise.state.data[e];
+                numberOfVotes.push(obj);
+            });
+            return numberOfVotes;
         }
     </script>
 </body>
