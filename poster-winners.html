@@ -899,7 +899,8 @@
             Rise.state = { data: countFrequency(flat(o))};
             console.log(Rise.state.data);
             const top5IDs = getTopFive(countFrequency(flat(o)));
-            return top5IDs;
+            const top10IDs = getTopTen(countFrequency(flat(o)));
+            return top10IDs;
 
         }
 
@@ -916,6 +917,7 @@
         //returns the top five keys based on the values
         const getTopFive = getTop(5);
 
+        const getTopTen = getTop(10);
 
         function flat(array) {
             return array.reduce((res, cur) => [...res, ...cur], [])
