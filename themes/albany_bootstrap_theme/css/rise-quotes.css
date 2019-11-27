@@ -54,9 +54,19 @@
     text-align: right;
 }
 
+.freebirdFormviewerViewCenteredContent, .freebirdFormviewerViewFormCard
+{
+    border: 1px solid black;
+}
+
 #quotesbutton{
     border-radius: 4px;
     padding: 8px;
+}
+
+.quotesform{
+    margin:auto;
+    border: 1px solid rgb(230, 224, 224);
 }
 
 .modal-title
