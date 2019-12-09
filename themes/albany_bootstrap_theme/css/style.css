@@ -16165,3 +16165,37 @@ div.form_page input[type=email] {
 .path-frontpage .paragraph--type--center-page-title {
     max-width: 910px;
 }
+
+.video-wrapper
+{
+    height: 180px;
+    
+}
+
+.video-container
+{
+    background: url(..//..//..//img//PlenaryPhotos//Welcome.jpg);
+    border-radius: 1%;
+    width: 240px;
+    height:140px;
+    color: white;
+    text-align: bottom;
+}
+
+.video-text
+{
+    border-radius: 1%;
+    width: 240px;
+    height: 30px;
+    font-size: 16px;
+    
+    box-shadow: 0 3px 3px #DCDCDC;
+
+}
+
+.rise-right-resiliency
+{
+    position: absolute;
+    right: 0;
+    top: 0%;
+}
