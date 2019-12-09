@@ -16199,3 +16199,11 @@ div.form_page input[type=email] {
     right: 0;
     top: 0%;
 }
+
+.field--name-field-alternate-resiliency-title {
+    height: 452px;
+    padding: 120px 50px 75px;
+    margin: 0 -15px 140px;
+    background: url('../../../sites/default/files/styles/hero_slide_image/public/hurricane-maria1.jpg?itok=rI0odKMa') center top;
+    position: relative;
+}
