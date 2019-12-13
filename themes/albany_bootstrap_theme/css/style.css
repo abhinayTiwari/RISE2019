@@ -16165,3 +16165,105 @@ div.form_page input[type=email] {
 .path-frontpage .paragraph--type--center-page-title {
     max-width: 910px;
 }
+
+a#relive-rise
+{
+    background-color: #46166B;
+    color: white;
+}
+
+@media screen and (min-width: 1200px){
+    .video-container
+    {
+        border-radius: 2%;
+        width: 220px;
+        height: 120px;
+    }
+    .video-text
+    {
+        width: 220px;
+        height: 30px;
+        font-size: 16px;
+        color: #46166B;
+    }
+    .video-wrapper
+    {
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 1199px){
+    .video-container
+    {
+        border-radius: 2%;
+        width: 240px;
+        height:140px;
+    }
+    .video-text
+    {
+        width: 240px;
+        height: 30px;
+        font-size: 16px;
+        color: #46166B;
+    }
+    .video-wrapper
+    {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .video-container
+    {
+        border-radius: 2%;
+        width: 210px;
+        height:110px;
+    }
+    .video-text
+    {
+        width: 210px;
+        height: 30px;
+        font-size: 16px;
+        color: #46166B;
+    }
+    .video-wrapper
+    {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .video-container
+    {
+        border-radius: 2%;
+        width: 80%;
+        height:45%;
+    }
+    .video-text
+    {
+        width: 80%;
+        height: 30px;
+        font-size: 16px;
+        color: #46166B;
+    }
+    .video-wrapper
+    {
+        height: 55%;
+    }
+}
+
+
+.rise-right-resiliency
+{
+    position: absolute;
+    right: 0;
+    top: 0%;
+}
+
+.field--name-field-alternate-resiliency-title {
+    height: 452px;
+    padding: 120px 50px 75px;
+    margin: 0 -15px 140px;
+    background: url('../../../sites/default/files/styles/hero_slide_image/public/hurricane-maria1.jpg?itok=rI0odKMa') center top;
+    position: relative;
+}
