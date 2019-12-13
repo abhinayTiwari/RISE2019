@@ -16166,32 +16166,92 @@ div.form_page input[type=email] {
     max-width: 910px;
 }
 
-.video-wrapper
+a#relive-rise
 {
-    height: 180px;
-    
-}
-
-.video-container
-{
-    background: url(..//..//..//img//PlenaryPhotos//Welcome.jpg);
-    border-radius: 1%;
-    width: 240px;
-    height:140px;
+    background-color: #46166B;
     color: white;
-    text-align: bottom;
 }
 
-.video-text
-{
-    border-radius: 1%;
-    width: 240px;
-    height: 30px;
-    font-size: 16px;
-    
-    box-shadow: 0 3px 3px #DCDCDC;
-
+@media screen and (min-width: 1200px){
+    .video-container
+    {
+        border-radius: 2%;
+        width: 220px;
+        height: 120px;
+    }
+    .video-text
+    {
+        width: 220px;
+        height: 30px;
+        font-size: 16px;
+        color: #46166B;
+    }
+    .video-wrapper
+    {
+        height: 160px;
+    }
 }
+
+@media screen and (max-width: 1199px){
+    .video-container
+    {
+        border-radius: 2%;
+        width: 240px;
+        height:140px;
+    }
+    .video-text
+    {
+        width: 240px;
+        height: 30px;
+        font-size: 16px;
+        color: #46166B;
+    }
+    .video-wrapper
+    {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .video-container
+    {
+        border-radius: 2%;
+        width: 210px;
+        height:110px;
+    }
+    .video-text
+    {
+        width: 210px;
+        height: 30px;
+        font-size: 16px;
+        color: #46166B;
+    }
+    .video-wrapper
+    {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .video-container
+    {
+        border-radius: 2%;
+        width: 80%;
+        height:45%;
+    }
+    .video-text
+    {
+        width: 80%;
+        height: 30px;
+        font-size: 16px;
+        color: #46166B;
+    }
+    .video-wrapper
+    {
+        height: 55%;
+    }
+}
+
 
 .rise-right-resiliency
 {
