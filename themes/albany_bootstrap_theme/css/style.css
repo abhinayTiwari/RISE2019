@@ -16289,3 +16289,8 @@ li.active a#day1-tab, li.active a#day2-tab, li.active a#day3-tab
     background-color: #46166B;
     color: white;
 }
+
+li a#day1-tab, li a#day2-tab, li a#day3-tab
+{
+    border: 1px solid #ddd;
+}
