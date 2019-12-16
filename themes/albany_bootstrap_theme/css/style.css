@@ -16267,3 +16267,25 @@ a#relive-rise
     background: url('../../../sites/default/files/styles/hero_slide_image/public/hurricane-maria1.jpg?itok=rI0odKMa') center top;
     position: relative;
 }
+
+a.nav-link h4
+{
+    padding: 0px 40px;
+}
+
+.image-wrapper
+{
+    margin: 15px 10px;
+}
+
+.rise-photos
+{
+    margin: 5px 0px 5px 5px;
+    border-radius: 2%;
+}
+
+li.active a#day1-tab, li.active a#day2-tab, li.active a#day3-tab
+{
+    background-color: #46166B;
+    color: white;
+}
