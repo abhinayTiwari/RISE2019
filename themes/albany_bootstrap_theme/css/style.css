@@ -16282,10 +16282,23 @@ a.nav-link h4
 {
     margin: 5px 0px 5px 5px;
     border-radius: 2%;
+    transition: all .2s ease-in-out;
 }
 
 li.active a#day1-tab, li.active a#day2-tab, li.active a#day3-tab
 {
     background-color: #46166B;
     color: white;
+}
+
+li a#day1-tab, li a#day2-tab, li a#day3-tab
+{
+    border: 1px solid #ddd;
+}
+
+@media screen and (min-width: 768px){
+    .rise-photos:hover
+    {
+        transform: scale(1.35);
+    }
 }
