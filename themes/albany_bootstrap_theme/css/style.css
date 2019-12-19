@@ -16283,6 +16283,7 @@ a.nav-link h4
     margin: 5px 0px 5px 5px;
     border-radius: 2%;
     transition: all .2s ease-in-out;
+    cursor: pointer;
 }
 
 li.active a#day1-tab, li.active a#day2-tab, li.active a#day3-tab
@@ -16299,6 +16300,42 @@ li a#day1-tab, li a#day2-tab, li a#day3-tab
 @media screen and (min-width: 768px){
     .rise-photos:hover
     {
-        transform: scale(1.35);
+        transform: scale(1.35);      
     }
 }
+
+#imageModal
+{
+    display: none;
+    position: fixed;
+    padding-top: 100px;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+    border: 1px solid grey;
+    left: 0px;
+    top : 0px;
+}
+
+#modal-content{
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 1200px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom{
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
