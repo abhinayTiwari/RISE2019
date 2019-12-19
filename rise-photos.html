@@ -607,6 +607,9 @@
                                                   <a class="nav-link" id="day3-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><h4>Day 3</h4></a>
                                                 </li>
                                               </ul>
+                                              <div id = "imageModal">
+                                                  <img id = "modal-content">
+                                              </div>
                                               <div class="tab-content" id="myTabContent">
                                                 <div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="day1-tab">
                                                     <div class = "image-wrapper">
@@ -1334,9 +1337,21 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js "></script>
     <script>
-         $(".rise-photos").click(function(event){
+   /**      $(".rise-photos").click(function(event){
         window.open($(this).attr("data-src"), '_blank');
+    })**/
+    let modal = document.getElementById("imageModal");
+    $(".rise-photos").click(function(event){
+        let src = $(this).attr("data-src");        
+        modal.style.display = "block";
+        let modalImg = document.getElementById("modal-content");
+        modalImg.src = src;    
     })
+
+    modal.onclick = function(){
+        modal.style.display = "none";
+    }
+    
     </script>
 </body>
 
