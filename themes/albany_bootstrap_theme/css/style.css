@@ -16319,3 +16319,21 @@ li.active a#day3-tab {
       width: 100%;
     }
   }
+
+@media screen and (max-width: 1199px){
+    .resiliency-centers{
+    height: 360px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .resiliency-centers{
+    height: 310px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .resiliency-centers{
+    height: 60%;
+    }
+}
