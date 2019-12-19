@@ -63,9 +63,9 @@ a {
     background-color: transparent;
 }
 
+a:active,
 a:hover {
-    text-decoration: none;
-    color: #46166B;
+    outline: 0;
 }
 
 abbr[title] {
@@ -1413,7 +1413,7 @@ a {
     text-decoration: none;
 }
 
-
+a:hover,
 a:focus {
     color: #23527c;
     text-decoration: underline;
@@ -8905,7 +8905,6 @@ a:visited {
 
 a:hover {
     text-decoration: underline;
-    color: #46166B;
 }
 
 
@@ -14494,7 +14493,7 @@ article.person .field--name-field-related-university-organiz {
 			background-color: rgba(0, 0, 0, 0.5);
 		}
 		*/
-    background: #000;
+    background: #46166B;
     border: solid 3px white;
     padding: 50px 15px;
     text-align: center;
@@ -16166,95 +16165,80 @@ div.form_page input[type=email] {
     max-width: 910px;
 }
 
-a#relive-rise
-{
+a#relive-rise {
     background-color: #46166B;
     color: white;
 }
 
-@media screen and (min-width: 1200px){
-    .video-container
-    {
+@media screen and (min-width: 1200px) {
+    .video-container {
         border-radius: 2%;
         width: 220px;
         height: 120px;
     }
-    .video-text
-    {
+    .video-text {
         width: 220px;
         height: 30px;
         font-size: 16px;
         color: #46166B;
     }
-    .video-wrapper
-    {
+    .video-wrapper {
         height: 160px;
     }
 }
 
-@media screen and (max-width: 1199px){
-    .video-container
-    {
+@media screen and (max-width: 1199px) {
+    .video-container {
         border-radius: 2%;
         width: 240px;
-        height:140px;
+        height: 140px;
     }
-    .video-text
-    {
+    .video-text {
         width: 240px;
         height: 30px;
         font-size: 16px;
         color: #46166B;
     }
-    .video-wrapper
-    {
+    .video-wrapper {
         height: 180px;
     }
 }
 
-@media screen and (max-width: 991px){
-    .video-container
-    {
+@media screen and (max-width: 991px) {
+    .video-container {
         border-radius: 2%;
         width: 210px;
-        height:110px;
+        height: 110px;
     }
-    .video-text
-    {
+    .video-text {
         width: 210px;
         height: 30px;
         font-size: 16px;
         color: #46166B;
     }
-    .video-wrapper
-    {
+    .video-wrapper {
         height: 150px;
     }
 }
 
-@media screen and (max-width: 767px){
-    .video-container
-    {
+@media screen and (max-width: 767px) {
+    .video-container {
         border-radius: 2%;
         width: 80%;
-        height:45%;
+        height: 45%;
     }
-    .video-text
-    {
+    .video-text {
         width: 80%;
         height: 30px;
         font-size: 16px;
         color: #46166B;
     }
-    .video-wrapper
-    {
+    .video-wrapper {
         height: 55%;
     }
 }
 
-
-.rise-right-resiliency
-{
+.rise-right-resiliency {
     position: absolute;
     right: 0;
     top: 0%;
@@ -16268,39 +16252,35 @@ a#relive-rise
     position: relative;
 }
 
-a.nav-link h4
-{
+a.nav-link h4 {
     padding: 0px 40px;
 }
 
-.image-wrapper
-{
+.image-wrapper {
     margin: 15px 10px;
 }
 
-.rise-photos
-{
+.rise-photos {
     margin: 5px 0px 5px 5px;
     border-radius: 2%;
     transition: all .2s ease-in-out;
-    cursor: pointer;
 }
 
-li.active a#day1-tab, li.active a#day2-tab, li.active a#day3-tab
-{
+li.active a#day1-tab,
+li.active a#day2-tab,
+li.active a#day3-tab {
     background-color: #46166B;
     color: white;
 }
 
-li a#day1-tab, li a#day2-tab, li a#day3-tab
-{
-    border: 1px solid #ddd;
+.rise-photos {
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px){
     .rise-photos:hover
     {
-        transform: scale(1.35);      
+        transform: scale(1.35);
     }
 }
 
