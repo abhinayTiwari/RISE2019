@@ -16337,3 +16337,15 @@ li.active a#day3-tab {
     height: 60%;
     }
 }
+
+.resiliency-centers{
+   font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    }
+
+.resiliency-list{
+    color: rgb(85,85,85);
+}
+
+.resiliency-list-container{
+    list-style-image: none;
+}
