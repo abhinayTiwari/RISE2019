@@ -16319,3 +16319,33 @@ li.active a#day3-tab {
       width: 100%;
     }
   }
+
+@media screen and (max-width: 1199px){
+    .resiliency-centers{
+    height: 360px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .resiliency-centers{
+    height: 310px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .resiliency-centers{
+    height: 60%;
+    }
+}
+
+.resiliency-centers{
+   font-family: 'TradeGothicLTStd-BdCn20', Helvetica, Arial, sans-serif;
+    }
+
+.resiliency-list{
+    color: rgb(85,85,85);
+}
+
+.resiliency-list-container{
+    list-style-image: none;
+}
