@@ -16322,10 +16322,9 @@ li.active a#day3-tab {
 
 @media screen and (min-width: 1200px){
     .resiliency-centers{
-        height: 290px;
+        height: 360px;
     }
 }
-
 
 @media screen and (max-width: 1199px){
     .resiliency-centers{
